@@ -13,14 +13,14 @@ const Hero = () => {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover brightness-[0.4]"
+                    className="w-full h-full object-cover brightness-[0.75] contrast-[1.1]"
                 >
                     <source src={getAsset(videos[0])} type="video/mp4" />
                 </video>
             </div>
 
             {/* Decorative Overlay */}
-            <div className="absolute inset-0 z-1 bg-gradient-to-t from-premium-maroon/60 via-transparent to-black/30"></div>
+            <div className="absolute inset-0 z-1 bg-gradient-to-t from-premium-maroon/40 via-transparent to-black/20"></div>
 
             {/* Content */}
             <div className="relative z-10 text-center px-4 max-w-5xl">

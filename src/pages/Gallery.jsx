@@ -8,7 +8,7 @@ const Gallery = () => {
     const [filter, setFilter] = useState('all');
 
     const allItems = [
-        ...images.slice(0, 30).map((img, idx) => ({ id: `img-${idx}`, type: 'image', src: img })),
+        ...images.map((img, idx) => ({ id: `img-${idx}`, type: 'image', src: img })),
         ...videos.map((vid, idx) => ({ id: `vid-${idx}`, type: 'video', src: vid }))
     ];
 

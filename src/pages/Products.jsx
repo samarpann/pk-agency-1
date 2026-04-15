@@ -1,29 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getAsset, images } from '../utils/assets';
+import { getAsset } from '../utils/assets';
 import { ShoppingCart, Eye, Filter, X } from 'lucide-react';
+
+import productsData from '../data/products.json';
 
 const Products = () => {
     const categories = [
         "All",
-        "Banquet Chairs",
-        "Wedding Sofas",
-        "Shamiana & Kanat",
         "Lighting & Decorations",
+        "Stage Setups",
         "Event Accessories"
-    ];
-
-    const productsData = [
-        { id: 1, name: "Luxury Banquet Chair", cat: "Banquet Chairs", img: images[5], desc: "High-quality stainless steel chairs with premium upholstery." },
-        { id: 2, name: "Royal Jaimala Chair", cat: "Banquet Chairs", img: images[6], desc: "Handcrafted intricate designs for the main stage." },
-        { id: 3, name: "SS Wedding Sofa", cat: "Wedding Sofas", img: images[10], desc: "Ultra-luxury stainless steel sofas for premium setups." },
-        { id: 4, name: "Maharaja Parda Sofa", cat: "Wedding Sofas", img: images[11], desc: "Traditional royal cushioned sofa with elegant finish." },
-        { id: 5, name: "Designer Shamiana", cat: "Shamiana & Kanat", img: images[14], desc: "Weather-resistant stylish tents for outdoor events." },
-        { id: 6, name: "Fancy Jhalar Light", cat: "Lighting & Decorations", img: images[20], desc: "Vibrant and efficient lighting solutions for decor." },
-        { id: 7, name: "Scent Machine Parda", cat: "Event Accessories", img: images[18], desc: "Fragrance infused decorative curtains for fresh appeal." },
-        { id: 8, name: "Ceiling Chandelier", cat: "Lighting & Decorations", img: images[25], desc: "Elegant ceiling decor for banquet halls." },
-        { id: 9, name: "Banquet Cushion Set", cat: "Event Accessories", img: images[30], desc: "High-density foam cushions for ultimate comfort." },
-        { id: 10, name: "Traditional Kanat", cat: "Shamiana & Kanat", img: images[16], desc: "Durable and colorful partitions for event spacing." },
     ];
 
     const [activeTab, setActiveTab] = useState("All");
@@ -43,10 +30,14 @@ const Products = () => {
     return (
         <div className="pt-20 min-h-screen bg-white">
             {/* Header */}
-            <section className="bg-premium-ivory py-16">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-5xl font-playfair font-bold text-premium-maroon mb-4">Our Product Catalog</h1>
-                    <p className="text-gray-600 max-w-2xl mx-auto uppercase tracking-widest text-sm font-semibold">Premium Furniture & Event Essentials</p>
+            <section className="relative py-24 bg-premium-maroon overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img src={getAsset('bg-furniture.png')} alt="Background" className="w-full h-full object-cover opacity-40 brightness-[0.5]" />
+                </div>
+                <div className="absolute inset-0 z-1 bg-gradient-to-t from-premium-maroon via-premium-maroon/40 to-transparent"></div>
+                <div className="max-w-7xl mx-auto px-4 relative z-10 text-center text-white">
+                    <h1 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-4">Our Product Catalog</h1>
+                    <p className="text-premium-gold uppercase tracking-widest text-sm font-semibold">Premium Furniture & Event Essentials</p>
                 </div>
             </section>
 

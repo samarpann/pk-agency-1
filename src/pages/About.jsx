@@ -13,8 +13,11 @@ const About = () => {
     return (
         <div className="pt-20">
             {/* Page Header */}
-            <section className="relative py-24 bg-premium-maroon">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/royal-lineage.png')]"></div>
+            <section className="relative py-32 bg-premium-maroon overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img src={getAsset('bg-banquet.png')} alt="Background" className="w-full h-full object-cover opacity-30 brightness-[0.6]" />
+                </div>
+                <div className="absolute inset-0 z-1 bg-gradient-to-b from-premium-maroon/80 to-premium-maroon/40"></div>
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center text-white">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -88,28 +91,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Image Gallery Preview */}
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-playfair font-bold">Our Infrastructure & Products</h2>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[2, 3, 4, 7, 8, 9, 11, 13].map((num, i) => (
-                            <motion.div
-                                key={num}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                className="h-64 rounded-xl overflow-hidden shadow-md group"
-                            >
-                                <img src={getAsset(images[num])} alt="Our Setup" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
         </div>
     );
 };

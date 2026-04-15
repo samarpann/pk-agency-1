@@ -69,6 +69,8 @@ export const images = [
     "IMG-20260205-WA0077.jpg",
     "IMG-20260205-WA0078.jpg",
     "IMG-20260205-WA0079.jpg",
+    "NEW-66.jpeg",
+    "NEW-67.jpeg",
 ];
 
 export const videos = [
